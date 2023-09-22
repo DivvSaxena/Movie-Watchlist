@@ -1,0 +1,110 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  border: 2px solid red;
+  width: 50%;
+  height: 350px;
+  background-image: url('images/hero-photo.jpg');
+  background-size: cover;
+  background-position: 85% 19%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.header{
+  text-shadow: 2px 4px 2px black;
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  color: #FFFFFF;
+  font-weight: 900;
+  font-size: 2.06rem;
+}
+.container-two{
+  position: relative;
+}
+
+.container-three{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid red;
+  width: 50%;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+
+
+.movie-select{
+  display: flex;
+  padding: 10px;
+  width:70%;
+  /* z-index: 1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.88px; */
+  font-size: 1.25rem;
+  border-radius: 6px;
+  border: 1px solid rgb(87, 83, 83);
+}
+
+.magnifying{
+  position: absolute;
+  left: 45px;
+  font-size: 1.3rem;
+  opacity: 0.4;
+}
+
+button{
+  padding: 10px;
+  font-size: 1.25rem;
+  width: 20%;
+  border-radius: 6px;
+  border: none;
+  border: 1px solid rgb(87, 83, 83);
+  cursor: pointer;
+}
+button:hover{
+  background: rgb(225, 191, 191);
+}
+
+.container-icon{
+  width: 50%;
+  margin: 0 auto;
+  height: 350px;
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  opacity: 0.6;
+}
+
+.icon-film{
+  font-size: 4rem;
+  opacity: 0.4;
+}
+
+.container-four{
+  width: 50%;
+  margin: 50px auto 0;
+  
+}
