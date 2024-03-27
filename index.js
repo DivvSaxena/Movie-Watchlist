@@ -32,6 +32,7 @@ document.addEventListener('click', (e) => {
     if(e.target.id == 'btn'){
         const inputFieldEl = document.getElementById('input-field')
         let movies = ''
+        arr = MoviesFromLocalStorage
         showMoviesInView()
         if(inputFieldEl.value){
             fetch(`https://www.omdbapi.com/?apikey=8e8d3e03&s=${inputFieldEl.value}`)
@@ -85,7 +86,7 @@ document.addEventListener('click', (e) => {
 function renderLists(movies){
     let listItems = ''
     for(let item of movies){
-        listItems += item
+        listItems += item 
     }
     savedWatchlistEl.innerHTML = listItems
 }
@@ -94,4 +95,5 @@ function renderSavedMovies(){
     arr = MoviesFromLocalStorage
     renderLists(arr)
     console.log(MoviesFromLocalStorage)
+
 }
