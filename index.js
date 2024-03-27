@@ -3,7 +3,7 @@ const sectionTwoEl = document.getElementById('section-two')
 const sectionTwoBg = document.getElementById('section-two-bg')
 const savedWatchlistEl = document.getElementById('savedWatchList')
 const MoviesFromLocalStorage = JSON.parse( localStorage.getItem("movie") )
-let arr = []
+let array = []
 
 
 function render(item){
@@ -32,9 +32,10 @@ document.addEventListener('click', (e) => {
     if(e.target.id == 'btn'){
         const inputFieldEl = document.getElementById('input-field')
         let movies = ''
-        arr = MoviesFromLocalStorage
+        
         showMoviesInView()
         if(inputFieldEl.value){
+            arr = MoviesFromLocalStorage
             fetch(`https://www.omdbapi.com/?apikey=8e8d3e03&s=${inputFieldEl.value}`)
             .then(res => res.json())
             .then(data => {
@@ -73,27 +74,70 @@ document.addEventListener('click', (e) => {
         }
     } else if(e.target.id == 'Watchlist'){
         let parent = e.target.parentNode.parentNode.parentNode
-        console.log(parent)
-
-        const parentAsString = parent.outerHTML
+        let subparent = e.target.parentNode.parentNode
+        let subMoreParent = e.target.parentNode
         
-        arr.push(parentAsString)
+        console.log(parent.children[0].src)
 
-        localStorage.setItem('movie', JSON.stringify(arr))
+        const movieDetails = {
+                                'Poster':`${parent.children[0].src}`,
+                                'Title':`${subparent.children[0].children[0].textContent}`,
+                                'imdbRating':`${subparent.children[0].children[1].textContent}`,
+                                'Runtime':`${subMoreParent.children[0].textContent}`,
+                                'Genre':`${subMoreParent.children[1].textContent}`,
+                                'Plot':`${subparent.children[2].children[0].textContent}`,
+                            }
+
+                            console.log(movieDetails)
+
+        
+        
+        array.push(movieDetails)
+
+        console.log(array)
+        localStorage.setItem('movie', JSON.stringify(array))
+    }else if(e.target.id == 'Remove'){
+        const movieIndex = Array.from(savedWatchlistEl.children).findIndex(movie => movie.contains(e.target.closest('.movie')));
+        if (movieIndex !== -1) {
+            array.splice(movieIndex, 1); // Remove the movie from the array
+            localStorage.setItem('movie', JSON.stringify(array)); // Update localStorage
+            renderLists(array); // Re-render the watchlist
+        }
     }
 })
 
 function renderLists(movies){
     let listItems = ''
     for(let item of movies){
-        listItems += item 
+        listItems += `
+                        <div class="movie">
+                            <img src="${item.Poster}" alt="poster">
+                            <div class="sub-section">
+                                <span>
+                                    <h1>${item.Title}</h1>
+                                    <p>⭐ ${item.imdbRating}</p>
+                                </span>
+                                <div class="sub-two">
+                                    <p>${item.Runtime}</p>
+                                    <p>${item.Genre}</p>
+                                    <button class="Watchlist" id="Remove">
+                                        <i class="fa fa-minus-circle fa-lg"></i>
+                                            Remove
+                                    </button>
+                                </div>
+                                <span>
+                                    <p class='summary'>${item.Plot}</p>
+                                </span>
+                            </div>
+                        </div>
+                     ` 
     }
     savedWatchlistEl.innerHTML = listItems
 }
 
 function renderSavedMovies(){
-    arr = MoviesFromLocalStorage
-    renderLists(arr)
+    array = MoviesFromLocalStorage
+    renderLists(array)
     console.log(MoviesFromLocalStorage)
 
 }

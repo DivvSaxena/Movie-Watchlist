@@ -118,6 +118,10 @@ p{
     width: auto;
 }
 
+.Watchlist:hover{
+    background-color: yellow;
+}
+
 .summary{
     overflow: hidden;
     white-space: wrap;
@@ -139,4 +143,124 @@ p{
 .section-two{
     display: flex;
     flex-direction: column;
+}
+
+/*Watchlist*/
+
+.bg-savedWatchlist{
+    font-size: 1rem;
+    opacity: 20%;
+    z-index: -10;
+    display: flex;
+    height: 50vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-savedWatchlist > p{
+    font-size: 1.25rem;
+}
+
+.bg-watchlist{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 67%;
+}
+
+
+
+@media (min-width:768px) {
+    .container{
+        max-width: 820px;
+    }
+
+    .header{
+        height: 250px;
+    }
+
+    .header > h1{
+        font-size: 5rem;
+        margin-bottom: 0;
+    }
+
+    .header > h2{
+        font-size: 2.5rem;
+        margin-top: 0;
+    }
+
+    .movie{
+        display: flex;
+        align-items: start;
+        margin: 1em 0 1em 0;
+    }
+
+    .sub-section{
+        align-items: start;
+        justify-content: start;
+    }
+
+    .sub-section > span > h1{
+        font-size: 2.5rem;
+    }
+
+    .sub-section > span > p{
+        font-size: 1.5rem;
+    }
+
+    span{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    span > h1{
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    p{
+        margin: 0;
+    }
+
+    .sub-two{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        margin: 1em 0 1em 0;
+        font-size: 1.5rem;
+    }
+
+    .sub-two > p{
+        margin-right: 1em;
+    }
+
+    .Watchlist{
+        font-size: 1.5rem;
+    }
+
+    /* WATCHLIST PAGE */
+    .bg-savedWatchlist{
+        font-size: 1.25rem;
+        opacity: 20%;
+        z-index: -10;
+        display: flex;
+        height: 50vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .bg-savedWatchlist > p{
+        font-size: 2rem;
+    }
+    
+    .bg-watchlist{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 41%;
+    }
+    
 }
