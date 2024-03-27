@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&family=Luckiest+Guy&family=McLaren&display=swap');
+
+html,body{
+    margin: 0;
+}
+
+.container{
+    max-width: 390px;
+    margin: 0 auto;
+    line-height: 1.5;
+    border: 2px solid black;
+}
+
+/* Header Styling */
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url('./assets/header.png');
+    background-size: cover;
+    background-color: black;
+    color: white;
+}
+
+.header>h1{
+    font-family: "Luckiest Guy", cursive;
+    font-weight: 400;
+    font-size: 2.5rem;
+    margin: 0.5em 0.5em 0.2em 0.5em;
+}
+
+.header>h2{
+    font-family: "Love Ya Like A Sister", cursive;
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin: 0.5em;
+}
+
+/* SECTION ONE STYLING */
+
+.input{
+    display: flex;
+   
+}
+
+.input-field{
+    font-family: "McLaren", sans-serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+    width: 70%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 0.35em;
+}
+
+button{
+    font-family: "McLaren", sans-serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+    width: 30%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 0.35em;
+}
+
+/* SECTION TWO STYLING */
+.movie{
+    display: flex;
+    align-items: center;
+    border: 2px solid yellow;
+}
+
+.movie > img{
+    width: 40%;
+}
+
+.sub-section{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 1em;
+    width: 60%;
+    overflow-y: hidden;
+}
+
+span{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+span > h1{
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+p{
+    margin: 0;
+}
+
+.sub-two{
+    display: flex;
+    align-items: center;
+}
+
+.Watchlist{
+    font-family: serif;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    width: auto;
+}
+
+.summary{
+    overflow: hidden;
+    white-space: wrap;
+    text-overflow: ellipsis;
+}
